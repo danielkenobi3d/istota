@@ -51,7 +51,7 @@ def load_shapes_data():
     for each in controls_shapes:
         if Path(f'{env.data}/nurbsCurves/{each}.json').exists():
             try:
-                data_save_load.load_curves(*controls_shapes)
+                data_save_load.load_curves(each)
             except:
                 print(f'an error ocurred loading {each}')
     controls.color_now_all_ctrls()
@@ -70,6 +70,12 @@ def cleanup():
 
 
 def custom_finalize():
+    L_ik_ctrl = pm.ls('L_main00_palm_ctr')[0]
+    L_ik_ctrl.space.set(1)
+    R_ik_ctrl = pm.ls('R_main00_palm_ctr')[0]
+    R_ik_ctrl.space.set(1)
+    headcontroller = pm.ls('C_fk00_head_ctr')[0]
+    headcontroller.space.set(1)
     pass
 
 
