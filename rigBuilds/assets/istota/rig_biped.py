@@ -1,6 +1,7 @@
 from istota.rigBuilds.assets.istota.customRig import rigBiped
 from RMPY.core import controls
-
+import importlib
+importlib.reload(rigBiped)
 
 def build_biped():
     rig_biped = rigBiped.RigByped()

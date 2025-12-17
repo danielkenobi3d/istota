@@ -16,8 +16,9 @@ from RMPY.rig.biped.rig import rigBreast
 from RMPY.rig.biped.rig import rigToes
 from RMPY.rig.biped.rig import neckHeadSpaceSwitch
 from RMPY.rig.biped.rig import rigEyesSpaceSwitch
-from RMPY.rig import rigSingleJoint
 from RMPY.rig import rigOutput
+from RMPY.rig import rigSingleJoint
+from istota.rigBuilds.assets.istota.customRig import breath
 
 
 class RigBypedModel(rigBase.BaseModel):
@@ -81,6 +82,9 @@ class RigByped(rigBase.RigBase):
         self.breast_root = [u'{}_breast00_reference_pnt']
         self.toes_root = [u'{}_toes00_reference_grp']
         self.gums_root = [u'C_gums00_reference_pnt']
+
+        self.breath_root = [u'C_breath00_reference_pnt']
+
 
     @property
     def neck_head(self):
@@ -229,7 +233,7 @@ class RigByped(rigBase.RigBase):
         self.r_leg_space_switch.build(self.r_leg, self.rig_world)
 
         self.neck_head.create_point_base(*self.neck_root)
-        # self.jaw.create_point_base(*self.jaw_root)
+        self.jaw.create_point_base(*self.jaw_root)
 
         # self.eyes.create_point_base(*self.eyes_root)
         # self.eye_space_switch.build(self.eyes, self.neck_head, self.rig_world)
@@ -241,7 +245,7 @@ class RigByped(rigBase.RigBase):
         # self.gums.create_point_base(*self.gums_root)
         # self.gums.set_parent(self.neck_head)
 
-        # self.jaw.set_parent(self.neck_head)
+        self.jaw.set_parent(self.neck_head)
         #
         # self.spine.set_parent(self.cog)
 
