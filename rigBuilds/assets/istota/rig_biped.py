@@ -13,8 +13,8 @@ def build_biped():
     rig_biped.build()
     env = environment.Environment()
 
-    rig_correctives = rigCorrectives.CorrectiveBlendShapes(definition=correctives_definition)
-    rig_correctives.build()
+    # rig_correctives = rigCorrectives.CorrectiveBlendShapes(definition=correctives_definition)
+    # rig_correctives.build()
     controls.color_now_all_ctrls()
     # tongue.build()
 
