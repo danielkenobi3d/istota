@@ -13,14 +13,12 @@ definition = dict(
                          LeyesCls={'connection': 'eyeCls', 'value': 10},
                          LeyesCls50={'connection': 'eyeCls', 'value': 5},
                          LeyesOpen={'connection': 'eyeCls', 'value': -10},
-                         LeyeFlat = {'connection': 'eyeFlat', 'value': 10},
                          ),
         attributes=dict(browOut={'type': 'float', 'min': -10, 'max': 10},
                         browIn={'type': 'float', 'min': -10, 'max': 10},
                         eyeCls={'type': 'float', 'min': -10, 'max': 10},
-                        eyeFlat={'type': 'float', 'min': 0, 'max': 10},
                         ),
-        order=['browOut', 'browIn', 'eyeCls', 'eyeFlat']
+        order=['browOut', 'browIn', 'eyeCls']
         ),
     cheeks=dict(
         type='blend_shape_definition',
