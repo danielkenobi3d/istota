@@ -13,7 +13,7 @@ visibility = {
         'reverseSpine':['C_fk01_Spine_grp'],
         'geo_visibility':{
             'low':['istota'],
-            'high':['istota_high']
+            #'high':['istota_high']
         }
 
 
